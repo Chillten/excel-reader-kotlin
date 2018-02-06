@@ -1,13 +1,26 @@
 package com.bogovich.excel
 
-import com.bogovich.excel.callback.ExcelRowContentCallback
 import mu.KLogging
+import org.apache.poi.xssf.eventusermodel.XSSFSheetXMLHandler
+import org.apache.poi.xssf.usermodel.XSSFComment
 
-class ExcelWorkSheetHandler {
+class ExcelWorkSheetHandler: XSSFSheetXMLHandler.SheetContentsHandler {
+
     companion object: KLogging()
-    val head_row = 0;
-    private var rowCallback: ExcelRowContentCallback? = null
-    private var currentRow = 0
 
+    override fun endRow(rowNum: Int) {
+        logger.info { "endRow rowNum = $rowNum" }
+    }
 
+    override fun headerFooter(text: String?, isHeader: Boolean, tagName: String?) {
+        logger.info { "headerFooter text = $text isHeader = $isHeader tagName = $tagName" }
+    }
+
+    override fun startRow(rowNum: Int) {
+        logger.info { "startRow rowNum = $rowNum" }
+    }
+
+    override fun cell(cellReference: String?, formattedValue: String?, comment: XSSFComment?) {
+        logger.info { "cell cellReference = $cellReference formattedValue = $formattedValue comment = $comment" }
+    }
 }
