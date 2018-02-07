@@ -1,18 +1,17 @@
-
-.gradle
-/build/
-gradle-app.setting
-!gradle-wrapper.jar
-.gradletasknamecache
+out/
+.idea_modules/
+.idea/
 *.log
-*.ctxt
-.mtj.tmp/
 *.jar
 *.war
 *.ear
 *.zip
 *.tar.gz
 *.rar
-hs_err_pid*
-.idea/
+### Gradle template
+.gradle/
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
 excel-reader-kotlin.iml
