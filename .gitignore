@@ -14,4 +14,5 @@ gradle-app.setting
 *.tar.gz
 *.rar
 hs_err_pid*
-.idea
+.idea/
+excel-reader-kotlin.iml
