@@ -28,9 +28,11 @@ class ExcelReader(val xlsxPackage: OPCPackage, val sheetContentsHandler: XSSFShe
         val worksheets = xssfReader.sheetsData as XSSFReader.SheetIterator
 
         worksheets.forEach { inputStream ->
+            logger.info { "start new sheet '${worksheets.sheetName}'" }
             inputStream.use {
                 readSheet(xssfReader.stylesTable, strings, inputStream)
             }
+            logger.info { "finish sheet '${worksheets.sheetName}'" }
         }
     }
 
